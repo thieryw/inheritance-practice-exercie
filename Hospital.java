@@ -1,29 +1,33 @@
 import patientAndPersonal.Nurse;
 import patientAndPersonal.Patient;
 import patientAndPersonal.User;
+import patientAndPersonal.Doctor;
 
 public class Hospital {
 
+    public static String getUserEmail(User u){
+        return u.getEmail();
+    }
 
     public static void main(String[] args) {
 
-       Patient william = new Patient();
+       User doctor = new Doctor();
+       User nurse = new Nurse();
+       User patient = new Patient();
 
-       william.setId(1);
-       william.setEmail("williamalexthiery@hotmail.fr");
-       william.setFirstName("william");
-       william.setLastName("thiery");
-       william.setGender("male");
-       william.setInsured(true);
-       william.setPatientId(10001);
+       doctor.setEmail("doctor@email.com");
+       nurse.setEmail("nurse@email.com");
+       patient.setEmail("patient@email.com");
 
-       System.out.println(william.getEmail() + "\n" + william.getPatientId());
 
-       Nurse laeticia = new Nurse();
 
-       laeticia.setFirstName("laeticia");
+       System.out.println("doctor email : " + getUserEmail(doctor) + "\n" +
+       "nurse email : " + getUserEmail(nurse) + "\n" +
+       "patient email : " + getUserEmail(patient));
 
-       System.out.println(laeticia.getFirstName());
+
+
+
 
     }
 
