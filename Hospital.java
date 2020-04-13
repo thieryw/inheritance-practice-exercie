@@ -1,7 +1,3 @@
-import patientAndPersonal.Nurse;
-import patientAndPersonal.Patient;
-import patientAndPersonal.User;
-import patientAndPersonal.Doctor;
 
 public class Hospital {
 
