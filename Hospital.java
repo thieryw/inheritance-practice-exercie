@@ -1,27 +1,37 @@
+import java.util.Arrays;
+import insurance.HealthInsurancePlan;
+import insurance.InsuranceBrand;
+import insurance.SilverPlan;
 
 public class Hospital {
 
-    public static String getUserEmail(User u){
-        return u.getEmail();
-    }
 
     public static void main(String[] args) {
 
-       User doctor = new Doctor();
-       User nurse = new Nurse();
-       User patient = new Patient();
+        HealthInsurancePlan insurancePlan = new SilverPlan();
 
-       doctor.setEmail("doctor@email.com");
-       nurse.setEmail("nurse@email.com");
-       patient.setEmail("patient@email.com");
+        InsuranceBrand insuranceBrand = new InsuranceBrand();
+        insuranceBrand.setId(123);
+        insuranceBrand.setName("red cross");
 
-
-
-       System.out.println("doctor email : " + getUserEmail(doctor) + "\n" +
-       "nurse email : " + getUserEmail(nurse) + "\n" +
-       "patient email : " + getUserEmail(patient));
+        insurancePlan.setBrand(insuranceBrand);
 
 
+        User william = new Patient();
+
+        william.setEmail("william@gmail.com");
+        william.setFirstName("william");
+        william.setGender("male");
+        william.setId(1001);
+        william.setLastName("thiery");
+        ((Patient) william).setInsured(true);
+        ((Patient) william).setPatientId(11001);
+        ((Patient) william).setInsurance(insurancePlan);
+
+        System.out.println(Arrays.toString(Billing.computePaymentAmount(((Patient) william), 1000.0)));
+
+
+        
 
 
 
