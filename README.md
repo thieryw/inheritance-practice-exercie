@@ -6,4 +6,6 @@ an exercise to practice inheritance based on a hospitals personal and patients
 
 # How tu run
 
-**TODO: add instruction on how to run for later**
+To run; compile Hospital.java file with the folowing command: < javac Hospital.java >.
+then run using < java Hospital >.
+
