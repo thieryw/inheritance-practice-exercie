@@ -7,7 +7,7 @@ public class PlatinumPlan extends HealthInsurancePlan {
     }
 
     public double computeMonthlyPremium(double salary){
-        return salary - salary * 0.8;
+        return salary * 0.08;
     }
 
 }
