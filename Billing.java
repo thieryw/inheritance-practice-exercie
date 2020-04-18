@@ -38,7 +38,7 @@ public class Billing {
 
 
 
-    public static double[] computePaymentAmount(Patient patient, double amount){
+    public static double[] computePaymentAmount(User patient, double amount){
 
         double[] payments = new double[2];
 

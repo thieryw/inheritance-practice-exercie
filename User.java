@@ -1,3 +1,4 @@
+import insurance.*;
 
 public class User{
     private long id;
@@ -5,8 +6,28 @@ public class User{
     private String lastName;
     private String gender;
     private String email;
+    private HealthInsurancePlan insurancePlan;
+    private boolean isInsured;
 
-   
+    public boolean isInsured() {
+        return isInsured;
+    }
+
+    public void setInsurance(HealthInsurancePlan insurancePlan) {
+        this.insurancePlan = insurancePlan;
+    }
+
+    public HealthInsurancePlan getInsurancePlan() {
+        if(isInsured){
+            return insurancePlan;
+        }
+
+        return null;
+    }
+
+    public void setInsured(boolean isInsured) {
+        this.isInsured = isInsured;
+    }
 
     public void setEmail(String email) {
         this.email = email;

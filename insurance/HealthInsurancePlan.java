@@ -1,6 +1,6 @@
 package insurance;
 
-public class HealthInsurancePlan {
+public abstract class HealthInsurancePlan {
 
     private double coverage;
 
@@ -21,6 +21,8 @@ public class HealthInsurancePlan {
     public void setBrand(InsuranceBrand offeredBy) {
         this.offeredBy = offeredBy;
     }
+
+    public abstract double computeMonthlyPremium(double salary);
 
     
 
