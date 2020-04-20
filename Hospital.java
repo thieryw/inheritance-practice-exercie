@@ -1,4 +1,7 @@
 import java.util.Arrays;
+
+import insurance.BlueCrossBlueShield;
+import insurance.GoldPlan;
 import insurance.HealthInsurancePlan;
 import insurance.InsuranceBrand;
 import insurance.PlatinumPlan;
@@ -9,15 +12,9 @@ public class Hospital {
 
     public static void main(String[] args) {
 
-        HealthInsurancePlan insurancePlan = new PlatinumPlan();
-
-        InsuranceBrand insuranceBrand = new InsuranceBrand();
-        insuranceBrand.setId(123);
-        insuranceBrand.setName("red cross");
-
+        HealthInsurancePlan insurancePlan = new GoldPlan();
+        InsuranceBrand insuranceBrand = new BlueCrossBlueShield();
         insurancePlan.setBrand(insuranceBrand);
-
-
         User william = new Doctor();
 
         william.setEmail("william@gmail.com");
@@ -25,6 +22,8 @@ public class Hospital {
         william.setGender("male");
         william.setId(1001);
         william.setLastName("thiery");
+        william.setAge(29);
+        william.setSmoker(true);
         ((Doctor)william).setSalary(3000);
         
         ((Doctor) william).setInsured(true);
@@ -33,13 +32,7 @@ public class Hospital {
 
         System.out.println(Arrays.toString(Billing.computePaymentAmount(((Doctor) william), 1000.0)));
 
-        System.out.println(((PlatinumPlan)insurancePlan).computeMonthlyPremium(((Doctor)william).getSalary()));
-
-
-
-
-        
-
+        System.out.println(william.getInsurancePlan().computeMonthlyPremium(((Doctor)william).getSalary(), william.getAge(), william.isSmoker()));
 
 
     }

@@ -4,10 +4,13 @@ public class User{
     private long id;
     private String firstName;
     private String lastName;
+    private int age;
     private String gender;
     private String email;
     private HealthInsurancePlan insurancePlan;
     private boolean isInsured;
+    private boolean isSmoker;
+
 
     public boolean isInsured() {
         return isInsured;
@@ -67,6 +70,22 @@ public class User{
 
     public String getLastName() {
         return lastName;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setSmoker(boolean isSmoker) {
+        this.isSmoker = isSmoker;
+    }
+
+    public boolean isSmoker() {
+        return isSmoker;
     }
 
     

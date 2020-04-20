@@ -6,8 +6,8 @@ public class SilverPlan extends HealthInsurancePlan {
         setCoverage(0.7);
     }
 
-    public double computeMonthlyPremium(double salary){
-        return salary - salary * 0.6;
+    public double computeMonthlyPremium(double salary, int age, boolean isSmoker){
+        return salary * 0.06 + getBrand().computeMonthlyPremium(this, age, isSmoker);
     }
     
 }

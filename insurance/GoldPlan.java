@@ -6,7 +6,7 @@ public class GoldPlan extends HealthInsurancePlan{
         setCoverage(0.8);
     }
 
-    public double computeMonthlyPremium(double salary) {
-        return salary * 0.07;
+    public double computeMonthlyPremium(double salary, int age, boolean isSmoker) {
+        return salary * 0.07 + getBrand().computeMonthlyPremium(this, age, isSmoker);
     }
 }
